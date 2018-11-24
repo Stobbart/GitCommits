@@ -16,7 +16,7 @@ extension UIViewController{
     }
     
     enum SegueName: String {
-        case CellSegue = "CellSegue"
+        case CommitSegue = "CommitSegue"
     }
     
 }

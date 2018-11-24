@@ -12,6 +12,7 @@ class CommitsViewController: UIViewController {
     
     @IBOutlet weak var commitsTableView: UITableView!
     @IBOutlet weak var refreshButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,12 @@ class CommitsViewController: UIViewController {
         refreshButton.isEnabled = false
     }
     
+    
+
+    
 }
+
+    // MARK: Table View Delegates
 
 extension CommitsViewController: UITableViewDelegate, UITableViewDataSource{
     
@@ -55,5 +61,9 @@ extension CommitsViewController: UITableViewDelegate, UITableViewDataSource{
         return UITableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DataService.dataService.selectedCommitIndex = indexPath.row
+    
+    }
     
 }

@@ -14,6 +14,10 @@ class DataService: NSObject{
     static var dataService: DataService = DataService()
     let url = URL(string: "https://api.github.com/repos/apple/swift/commits")
     var commits: [Commit] = []
+    var selectedCommitIndex: Int = 0
+    var selectedCommit: Commit{
+        return commits[selectedCommitIndex]
+    }
     
     func downloadCommits(completion: @escaping (
         ) -> Void) {
@@ -37,4 +41,5 @@ class DataService: NSObject{
         }).resume()
         
     }
+    
 }
