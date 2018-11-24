@@ -14,7 +14,7 @@ class CommitInfoViewController: UIViewController {
     @IBOutlet weak var commitTitleLabel: UILabel!
     @IBOutlet weak var commitDateLabel: UILabel!
     @IBOutlet weak var commitAuthorLabel: UILabel!
-    @IBOutlet weak var authorAccountImage: UIImageView!
+    @IBOutlet weak var authorAccountImage: GitCommitImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

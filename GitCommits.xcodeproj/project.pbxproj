@@ -18,6 +18,8 @@
 		A23492AF21A9AAC20059D295 /* CommitInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23492AE21A9AAC20059D295 /* CommitInfoViewController.swift */; };
 		A23492B321A9AC350059D295 /* CommitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23492B221A9AC350059D295 /* CommitCell.swift */; };
 		A23492B621A9AD090059D295 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23492B521A9AD090059D295 /* UIViewController.swift */; };
+		A23492B921A9C1C70059D295 /* GitCommitImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23492B821A9C1C70059D295 /* GitCommitImageView.swift */; };
+		A23492BB21A9C1F30059D295 /* GitCommitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23492BA21A9C1F30059D295 /* GitCommitButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		A23492AE21A9AAC20059D295 /* CommitInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitInfoViewController.swift; sourceTree = "<group>"; };
 		A23492B221A9AC350059D295 /* CommitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCell.swift; sourceTree = "<group>"; };
 		A23492B521A9AD090059D295 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A23492B821A9C1C70059D295 /* GitCommitImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCommitImageView.swift; sourceTree = "<group>"; };
+		A23492BA21A9C1F30059D295 /* GitCommitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitCommitButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		A234928F21A9A6B70059D295 /* GitCommits */ = {
 			isa = PBXGroup;
 			children = (
+				A23492B721A9C1950059D295 /* Design */,
 				A23492B421A9ACF60059D295 /* Extensions */,
 				A23492AB21A9AA870059D295 /* ViewControllers */,
 				A23492AA21A9A99F0059D295 /* Services */,
@@ -136,6 +141,15 @@
 				A23492B521A9AD090059D295 /* UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A23492B721A9C1950059D295 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				A23492B821A9C1C70059D295 /* GitCommitImageView.swift */,
+				A23492BA21A9C1F30059D295 /* GitCommitButton.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,12 +225,14 @@
 			files = (
 				A23492A521A9A8770059D295 /* Commit.swift in Sources */,
 				A23492AD21A9AAAF0059D295 /* CommitsViewController.swift in Sources */,
+				A23492B921A9C1C70059D295 /* GitCommitImageView.swift in Sources */,
 				A23492A321A9A8090059D295 /* DataService.swift in Sources */,
 				A23492AF21A9AAC20059D295 /* CommitInfoViewController.swift in Sources */,
 				A23492B321A9AC350059D295 /* CommitCell.swift in Sources */,
 				A234929321A9A6B70059D295 /* ViewController.swift in Sources */,
 				A234929121A9A6B70059D295 /* AppDelegate.swift in Sources */,
 				A23492B621A9AD090059D295 /* UIViewController.swift in Sources */,
+				A23492BB21A9C1F30059D295 /* GitCommitButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
