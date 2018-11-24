@@ -25,21 +25,33 @@ class CommitsViewController: UIViewController {
     }
     
     func loadCommits(){
-        DataService.dataService.downloadCommits(completion: {
+        DataService.dataService.downloadCommits(completion: { (error) in
+            switch error{
+                case .NONE:
+                    DispatchQueue.main.async {
+                        self.commitsTableView.reloadData()
+                    }
+                case .NO_CONNECTION:
+                    self.errorAlert(title: "No Data Found", message: error.rawValue)
+                    break
+            }
             DispatchQueue.main.async {
                 self.refreshButton.isEnabled = true
-                self.commitsTableView.reloadData()
             }
+            
         }
     )}
+    
+    func errorAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func refreshCommits(){
         loadCommits()
         refreshButton.isEnabled = false
     }
-    
-    
-
     
 }
 
