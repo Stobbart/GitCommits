@@ -15,4 +15,8 @@ extension UIViewController{
         case CommitCell = "CommitCell"
     }
     
+    enum SegueName: String {
+        case CellSegue = "CellSegue"
+    }
+    
 }

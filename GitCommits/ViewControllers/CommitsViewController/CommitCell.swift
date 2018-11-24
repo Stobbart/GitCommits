@@ -11,6 +11,7 @@ import UIKit
 class CommitCell: UITableViewCell {
 
     @IBOutlet weak var commitTitleLabel: UILabel!
+    @IBOutlet weak var commitNumberLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

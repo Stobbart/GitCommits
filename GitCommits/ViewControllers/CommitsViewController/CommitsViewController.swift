@@ -11,6 +11,7 @@ import UIKit
 class CommitsViewController: UIViewController {
     
     @IBOutlet weak var commitsTableView: UITableView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +24,17 @@ class CommitsViewController: UIViewController {
     }
     
     func loadCommits(){
-        DataService.dataService.downloadCommits {
+        DataService.dataService.downloadCommits(completion: {
             DispatchQueue.main.async {
+                self.refreshButton.isEnabled = true
                 self.commitsTableView.reloadData()
             }
         }
-    }
+    )}
     
     @IBAction func refreshCommits(){
         loadCommits()
+        refreshButton.isEnabled = false
     }
     
 }
@@ -46,6 +49,7 @@ extension CommitsViewController: UITableViewDelegate, UITableViewDataSource{
         
         if let commitCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.CommitCell.rawValue, for: indexPath) as? CommitCell{
             commitCell.commitTitleLabel.text = DataService.dataService.commits[indexPath.row].title
+            commitCell.commitNumberLabel.text = String(indexPath.row + 1)
             return commitCell
         }
         return UITableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

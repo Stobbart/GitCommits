@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1257" y="-42"/>
         </scene>
-        <!--Commits View Controller-->
+        <!--Commits-->
         <scene sceneID="Pyd-Ie-mlR">
             <objects>
                 <viewController id="dUn-MG-Hh8" customClass="CommitsViewController" customModule="GitCommits" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-YL-eTe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-YL-eTe">
                                 <rect key="frame" x="0.0" y="64" width="375" height="529"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,17 +47,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Commit Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP4-fL-hrV">
-                                                    <rect key="frame" x="27" y="16" width="311" height="34"/>
+                                                    <rect key="frame" x="49" y="16" width="311" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYa-Ex-wUw">
+                                                    <rect key="frame" x="10" y="23" width="31" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="commitNumberLabel" destination="VYa-Ex-wUw" id="TQq-Fm-BZl"/>
                                             <outlet property="commitTitleLabel" destination="xP4-fL-hrV" id="Mge-EM-CUF"/>
-                                            <segue destination="I7I-O1-nni" kind="show" id="Mn2-AI-Iko"/>
+                                            <segue destination="I7I-O1-nni" kind="show" identifier="CommitSegue" id="Mn2-AI-Iko"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -67,9 +75,11 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN2-UY-JEk">
-                                <rect key="frame" x="161" y="617" width="53" height="30"/>
+                                <rect key="frame" x="133" y="617" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Refresh"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="0.72426625840000003" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="refreshCommits" destination="dUn-MG-Hh8" eventType="touchUpInside" id="3BM-Lb-QAY"/>
                                 </connections>
@@ -78,9 +88,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LKC-MF-AU6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="W4u-p3-AYK"/>
+                    <navigationItem key="navigationItem" title="Commits" id="W4u-p3-AYK"/>
                     <connections>
                         <outlet property="commitsTableView" destination="WsX-YL-eTe" id="znd-6M-cMf"/>
+                        <outlet property="refreshButton" destination="bN2-UY-JEk" id="VJc-M0-uzW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6r-cS-ct4" userLabel="First Responder" sceneMemberID="firstResponder"/>
