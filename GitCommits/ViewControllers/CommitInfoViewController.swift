@@ -18,9 +18,17 @@ class CommitInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        commitTitleLabel.text = DataService.dataService.selectedCommit.title
-        commitDateLabel.text = DataService.dataService.selectedCommit.date
-        commitAuthorLabel.text = DataService.dataService.selectedCommit.authorName
+        let selectedCommit = DataService.dataService.selectedCommit
+        commitTitleLabel.text = selectedCommit.title
+        commitDateLabel.text = selectedCommit.date
+        commitAuthorLabel.text = selectedCommit.authorName
+        
+        let url = URL(string: selectedCommit.imageURL)
+        if let data = NSData(contentsOf: url ?? URL(fileURLWithPath: "")) {
+            authorAccountImage.image = UIImage(data: data as Data)
+        }
+        
+        
     }
 
 
