@@ -12,6 +12,8 @@
 		A234929621A9A6B70059D295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A234929421A9A6B70059D295 /* Main.storyboard */; };
 		A234929821A9A6B80059D295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A234929721A9A6B80059D295 /* Assets.xcassets */; };
 		A234929B21A9A6B80059D295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A234929921A9A6B80059D295 /* LaunchScreen.storyboard */; };
+		A23492A321A9A8090059D295 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23492A221A9A8090059D295 /* DataService.swift */; };
+		A23492A521A9A8770059D295 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23492A421A9A8770059D295 /* Commit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A234929721A9A6B80059D295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A234929A21A9A6B80059D295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A234929C21A9A6B80059D295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A23492A221A9A8090059D295 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		A23492A421A9A8770059D295 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				A234929721A9A6B80059D295 /* Assets.xcassets */,
 				A234929921A9A6B80059D295 /* LaunchScreen.storyboard */,
 				A234929C21A9A6B80059D295 /* Info.plist */,
+				A23492A221A9A8090059D295 /* DataService.swift */,
+				A23492A421A9A8770059D295 /* Commit.swift */,
 			);
 			path = GitCommits;
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23492A521A9A8770059D295 /* Commit.swift in Sources */,
+				A23492A321A9A8090059D295 /* DataService.swift in Sources */,
 				A234929321A9A6B70059D295 /* ViewController.swift in Sources */,
 				A234929121A9A6B70059D295 /* AppDelegate.swift in Sources */,
 			);
